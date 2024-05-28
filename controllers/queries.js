@@ -1,14 +1,5 @@
 import pool from '../config/db.js';
 
-/* TEST
-const getData = async () => {
-    const response = await pool.query('SELECT NOW()');
-    console.log(response);
-}
-
-getData();
-*/
-
 const argument = process.argv.slice(2);
 const option = argument[0];
 const nombre = argument[1];
@@ -29,8 +20,6 @@ const addStudent = async (nombre, rut, curso, nivel) => {
     }
 }
 
-// addStudent(nombre, rut, curso, nivel); // TEST
-
 // 2. SHOW ALL STUDENT: Consultar los estudiantes registrados.
 const showStudents = async () => {
     try {
@@ -41,8 +30,6 @@ const showStudents = async () => {
         console.log("ERROR SHOWING STUDENTS:", err);
     }
 }
-
-//showStudents(); // TEST
 
 // 3. SHOW STUDENT BY RUT: Consultar estudiante por rut.
 const showByRut = async (rut) => {
@@ -56,8 +43,6 @@ const showByRut = async (rut) => {
     }
 }
 
-//showByRut(rut); // TEST
-
 // 4. UPDATE STUDENT: Actualizar la información de un estudiante.
 const updateStudent = async (nombre, rut, curso, nivel) => {
     try {
@@ -70,8 +55,6 @@ const updateStudent = async (nombre, rut, curso, nivel) => {
     }
 }
 
-//updateStudent(nombre, rut, curso, nivel); // TEST
-
 // 5. DELETE STUDENT: Eliminar el registro de un estudiante.
 const deleteStudent = async (rut) => {
     try {
@@ -83,7 +66,5 @@ const deleteStudent = async (rut) => {
         console.log("ERROR DELETING STUDENT:", err);
     }
 }
-
-//deleteStudent(rut); // TEST
 
 export  { addStudent, showStudents, showByRut, updateStudent, deleteStudent };
