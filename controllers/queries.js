@@ -8,6 +8,7 @@ const getData = async () => {
 
 getData();
 */
+
 const argument = process.argv.slice(2);
 const option = argument[0];
 const nombre = argument[1];
@@ -28,7 +29,7 @@ const addStudent = async (nombre, rut, curso, nivel) => {
     }
 }
 
-addStudent(nombre, rut, curso, nivel);
+// addStudent(nombre, rut, curso, nivel); // TEST
 
 // 2. SHOW ALL STUDENT: Consultar los estudiantes registrados.
 const showStudents = async () => {
@@ -41,7 +42,7 @@ const showStudents = async () => {
     }
 }
 
-//showStudents();
+//showStudents(); // TEST
 
 // 3. SHOW STUDENT BY RUT: Consultar estudiante por rut.
 const showByRut = async (rut) => {
@@ -55,7 +56,7 @@ const showByRut = async (rut) => {
     }
 }
 
-//showByRut(rut);
+//showByRut(rut); // TEST
 
 // 4. UPDATE STUDENT: Actualizar la información de un estudiante.
 const updateStudent = async (nombre, rut, curso, nivel) => {
@@ -69,7 +70,7 @@ const updateStudent = async (nombre, rut, curso, nivel) => {
     }
 }
 
-//updateStudent(nombre, rut, curso, nivel);
+//updateStudent(nombre, rut, curso, nivel); // TEST
 
 // 5. DELETE STUDENT: Eliminar el registro de un estudiante.
 const deleteStudent = async (rut) => {
@@ -83,6 +84,6 @@ const deleteStudent = async (rut) => {
     }
 }
 
-//deleteStudent(rut);
+//deleteStudent(rut); // TEST
 
-export default { addStudent, showStudents, showByRut, updateStudent, deleteStudent };
+export  { addStudent, showStudents, showByRut, updateStudent, deleteStudent };
