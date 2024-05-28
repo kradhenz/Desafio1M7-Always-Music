@@ -14,7 +14,7 @@ const addStudent = async (nombre, rut, curso, nivel) => {
         const sql = 'INSERT INTO students (nombre, rut, curso, nivel) VALUES ($1, $2, $3, $4)';
         const values = [nombre, rut, curso, nivel];
         const response = await pool.query(sql, values);
-        console.log("ADDED:", response.rowCount);
+        console.log(`Estudiante ${nombre} agregado con éxito.`);
     } catch (err) {
         console.log("ERROR ADDING STUDENTS:", err);
     }
@@ -25,7 +25,7 @@ const showStudents = async () => {
     try {
         const sql = 'SELECT * FROM students';
         const response = await pool.query(sql);
-        console.log('Estudiantes registrados\n', response.rows);
+        console.log('Registro actual\n', response.rows);
     } catch (err) {
         console.log("ERROR SHOWING STUDENTS:", err);
     }
@@ -37,7 +37,7 @@ const showByRut = async (rut) => {
         const sql = 'SELECT * FROM students WHERE rut = $1';
         const values = [rut];
         const response = await pool.query(sql, values);
-        console.log(response.rows);
+        console.log(response.rows)
     } catch (err) {
         console.log("ERROR SHOWING STUDENT BY RUT:", err);
     }
@@ -49,7 +49,7 @@ const updateStudent = async (nombre, rut, curso, nivel) => {
         const sql = 'UPDATE students SET nombre = $1, rut = $2, curso = $3, nivel = $4 WHERE rut = $2';
         const values = [nombre, rut, curso, nivel];
         const response = await pool.query(sql, values);
-        console.log("UPDATED:", response.rowCount);
+        console.log(`Estudiante ${nombre} editado con éxito.`);
     } catch (err) {
         console.log("ERROR UPDATING STUDENT:", err);
     }
@@ -61,10 +61,10 @@ const deleteStudent = async (rut) => {
         const sql = 'DELETE FROM students WHERE rut = $1';
         const values = [rut];
         const response = await pool.query(sql, values);
-        console.log("DELETED:", response.rowCount);
+        console.log(`Registro de estudiante con rut ${rut} eliminado.`);
     } catch (err) {
         console.log("ERROR DELETING STUDENT:", err);
     }
 }
 
-export  { addStudent, showStudents, showByRut, updateStudent, deleteStudent };
+export { addStudent, showStudents, showByRut, updateStudent, deleteStudent };
